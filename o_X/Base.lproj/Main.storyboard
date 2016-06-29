@@ -38,6 +38,9 @@
                                 <state key="normal" title="New Game">
                                     <color key="titleColor" red="0.84289366006851196" green="0.89870202541351318" blue="0.95695596933364868" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RgH-90-AzL"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rw7-Bi-Ffa" userLabel="Container">
                                 <rect key="frame" x="148" y="158" width="305" height="305"/>
@@ -244,6 +247,15 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="GameButton0" destination="fxW-Uc-ZMI" id="eIo-5G-yop"/>
+                        <outlet property="GameButton1" destination="yoS-oe-snY" id="FGW-HF-xpd"/>
+                        <outlet property="GameButton2" destination="ndh-SV-KCn" id="N1n-Jw-wFB"/>
+                        <outlet property="GameButton3" destination="wm0-O0-Oin" id="RtX-0e-lZR"/>
+                        <outlet property="GameButton4" destination="dbI-m2-hdE" id="vgF-gF-XEY"/>
+                        <outlet property="GameButton5" destination="FOi-7p-zVp" id="yEh-ly-iYX"/>
+                        <outlet property="GameButton6" destination="HCA-DL-JEE" id="aLT-pw-S65"/>
+                        <outlet property="GameButton7" destination="iTO-fK-uhV" id="OD3-gF-oUh"/>
+                        <outlet property="GameButton8" destination="J9b-E9-iuO" id="Kax-ux-K0J"/>
                         <outlet property="newGameButton" destination="fX8-WK-s1G" id="Icp-bJ-yaW"/>
                     </connections>
                 </viewController>

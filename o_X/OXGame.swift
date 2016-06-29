@@ -26,7 +26,7 @@ class OXGame {
     var buttonCount:Int = 0
     var currentTurnType:CellType = CellType.X     // is there a way to make this set to startType???
     
-    private var board: [CellType] = [CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty]
+     var board: [CellType] = [CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty]
     
     private var startType: CellType = CellType.X
     
@@ -35,8 +35,7 @@ class OXGame {
     }
     
     func whoseTurn() -> CellType {
-        
-        if currentTurnType == CellType.X {
+        if (turnCount() % 2 == 0) {
             return CellType.X
         }
         else {
@@ -67,9 +66,6 @@ class OXGame {
         }
     }
     
-    func reset() {
-        board = [CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty]
-        buttonCount = 0
-    }
 
+    
 }

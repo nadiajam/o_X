@@ -13,23 +13,25 @@ class OXGameController {
 
 
     private var currentGame: OXGame = OXGame()
-
-//    Implement the following methods. You need to decide the inputs and outputs of each methods as well as the logic to make the game work.
-//    getCurrentGame
-//    restartGame
-//    playMove. Should call playMove on the OXGame
     
     func getCurrentGame() -> OXGame {
         return currentGame
     }
 
-    func resetGame() {
-        currentGame.reset()
-        print("hi")
+    func restartGame1() {
+        currentGame.resetGame()
     }
 
     func playMove(cellNumber: Int) {
         currentGame.playMove(cellNumber)
+    }
+    
+    func gameWon() {
+        currentGame.gameWon()
+    }
+    
+    func gameState() {
+        currentGame.currentGameStatus()
     }
 
 }

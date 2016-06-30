@@ -7,55 +7,87 @@ import UIKit
 
 class BoardViewController: UIViewController {
 
+
+    @IBOutlet weak var container: UIView!
     @IBOutlet weak var newGameButton: UIButton!
-    @IBOutlet weak var GameButton0: UIButton!
-    @IBOutlet weak var GameButton1: UIButton!
-    @IBOutlet weak var GameButton2: UIButton!
-    @IBOutlet weak var GameButton3: UIButton!
-    @IBOutlet weak var GameButton4: UIButton!
-    @IBOutlet weak var GameButton5: UIButton!
-    @IBOutlet weak var GameButton6: UIButton!
-    @IBOutlet weak var GameButton7: UIButton!
-    @IBOutlet weak var GameButton8: UIButton!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        newGameButton.hidden = true         //hides new button upon load
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    
+    //logout of current game
     @IBAction func Logout(sender: AnyObject) {
         print ("logout selected")
+    }
+    
+    
+    //button pressed on board
+    @IBAction func buttons(sender: UIButton) {
+        OXGameController.sharedInstance.getCurrentGame().buttonCount += 1       //increase button count by 1
+        OXGameController.sharedInstance.playMove(sender.tag)
+        OXGameController.sharedInstance.gameState()
+        sender.setTitle(OXGameController.sharedInstance.getCurrentGame().whoseTurn().rawValue, forState: .Normal) 
+        
+        sender.enabled = false
+        
+        if OXGameController.sharedInstance.getCurrentGame().gameWon() {
+            OXGameController.sharedInstance.getCurrentGame().currentGameState = OXGameState.Inprogress
+            print("\(OXGameController.sharedInstance.getCurrentGame().currentTurnType) wins, congrats!")
+            newGameButton.hidden = false
+            
+            for button in container.subviews {
+                if let value = button as? UIButton {
+                    value.enabled = false
+                }
+            }
+            
+            //UIAlert
+            let whoWon: String = "\(OXGameController.sharedInstance.getCurrentGame().currentTurnType) Won"
+            let alert = UIAlertController(title: "Game Over", message: whoWon, preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler:  { (action) in
+                self.newGameButton.hidden = false
+            })
+            alert.addAction(alertAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }
+        
+        if ( OXGameController.sharedInstance.getCurrentGame().currentGameStatus() == OXGameState.Tie ) {
+            OXGameController.sharedInstance.getCurrentGame().currentGameState = OXGameState.Inprogress
+            newGameButton.hidden = false
+            
+            //UIAlert
+            let alert = UIAlertController(title: "Game Over", message: "Tie", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler:  { (action) in
+                self.newGameButton.hidden = false
+            })
+            alert.addAction(alertAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         
     }
     
     
-    @IBAction func buttons(sender: UIButton) {
-        print ("button \(sender.tag) selected")
-        OXGameController.sharedInstance.getCurrentGame().buttonCount += 1
-        OXGameController.sharedInstance.playMove(sender.tag)
-        sender.setTitle(OXGameController.sharedInstance.getCurrentGame().whoseTurn().rawValue, forState: .Normal)
-//        sender.enabled = false
-    }
+    //restart board
     
-    @IBAction func newGame(sender: AnyObject) {
+    @IBAction func newGame(sender: UIButton) {
         self.restartGame()
     }
     
     func restartGame() {
-//        func reset() {
-            board = [CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty, CellType.Empty]
-            //        buttonCount = 0        //sets the titles of the cell buttons to “” (empty string)
-//        GameButton0.enabled = true
-//        GameButton1.enabled = true
-//        GameButton2.enabled = true
-//        GameButton3.enabled = true
-//        GameButton4.enabled = true
-//        GameButton5.enabled = true
-//        GameButton6.enabled = true
-//        GameButton7.enabled = true
-//        GameButton8.enabled = true
+        OXGameController.sharedInstance.restartGame1()
+        for apple in container.subviews {
+            if let banana = apple as? UIButton {
+                banana.setTitle("", forState: .Normal)
+                banana.enabled = true
+            }
+        }
+        newGameButton.hidden = true
+    }
 }
 

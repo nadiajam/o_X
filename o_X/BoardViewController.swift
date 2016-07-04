@@ -20,6 +20,9 @@ class BoardViewController: UIViewController {
     
     //logout of current game
     @IBAction func Logout(sender: AnyObject) {
+        let viewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()
+        let window = UIApplication.sharedApplication().keyWindow
+        window?.rootViewController = viewController
         print ("logout selected")
     }
     

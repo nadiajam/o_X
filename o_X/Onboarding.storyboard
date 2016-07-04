@@ -1,8 +1,200 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eN1-U2-Jya">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="SZj-4U-1W4">
+            <objects>
+                <navigationController id="eN1-U2-Jya" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g17-BA-Wjz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Dz5-oz-ac3" kind="relationship" relationship="rootViewController" id="rfn-7o-RFF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKg-6J-sJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-153" y="403"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Nu-Gq-Wuv">
+            <objects>
+                <viewController id="Dz5-oz-ac3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p39-qz-yiX"/>
+                        <viewControllerLayoutGuide type="bottom" id="vvx-S5-ABK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3ED-2i-GlD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPz-0h-Yr6">
+                                <rect key="frame" x="225" y="120" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="faX-EF-3Wk"/>
+                                    <constraint firstAttribute="width" constant="150" id="wSy-vD-ixt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="33"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpl-8e-150" userLabel="Login">
+                                <rect key="frame" x="281" y="285" width="38" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Znd-Jj-Y1i" kind="show" id="EDo-lp-814"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIC-31-lht" userLabel="Register">
+                                <rect key="frame" x="272" y="335" width="57" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="F1v-T2-MI1" kind="show" id="i2A-hJ-mDh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8428936601" green="0.89870202539999999" blue="0.95695596930000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fPz-0h-Yr6" firstAttribute="centerX" secondItem="3ED-2i-GlD" secondAttribute="centerX" id="N2t-NT-8Dp"/>
+                            <constraint firstItem="fPz-0h-Yr6" firstAttribute="top" secondItem="3ED-2i-GlD" secondAttribute="top" constant="120" id="d9s-Qc-zBi"/>
+                            <constraint firstItem="DIC-31-lht" firstAttribute="centerX" secondItem="3ED-2i-GlD" secondAttribute="centerX" id="fsX-Kd-v3Y"/>
+                            <constraint firstItem="Kpl-8e-150" firstAttribute="centerY" secondItem="3ED-2i-GlD" secondAttribute="centerY" id="m20-Ab-3t0"/>
+                            <constraint firstItem="DIC-31-lht" firstAttribute="top" secondItem="Kpl-8e-150" secondAttribute="bottom" constant="20" id="mQ7-xh-tu3"/>
+                            <constraint firstItem="Kpl-8e-150" firstAttribute="centerX" secondItem="3ED-2i-GlD" secondAttribute="centerX" id="rEw-OV-0CK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uR8-05-ypk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyL-5K-Ive" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="403"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="agT-LJ-EAo">
+            <objects>
+                <viewController id="Znd-Jj-Y1i" customClass="LoginViewController" customModule="o_X" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="67n-oY-2YN"/>
+                        <viewControllerLayoutGuide type="bottom" id="n3l-S4-yFC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Cd-af-wgk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="56U-fT-1Vc">
+                                <rect key="frame" x="200" y="205" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="lDN-aN-AAJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-El-p4S">
+                                <rect key="frame" x="200" y="285" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="UKK-d6-jP4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFz-vh-eK5">
+                                <rect key="frame" x="281" y="385" width="38" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="Znd-Jj-Y1i" eventType="touchUpInside" id="k1k-XX-Y92"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8428936601" green="0.89870202539999999" blue="0.95695596930000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xeq-El-p4S" firstAttribute="top" secondItem="56U-fT-1Vc" secondAttribute="bottom" constant="50" id="FTd-Cz-hSW"/>
+                            <constraint firstItem="xeq-El-p4S" firstAttribute="centerY" secondItem="7Cd-af-wgk" secondAttribute="centerY" id="VKF-Ce-x7m"/>
+                            <constraint firstItem="56U-fT-1Vc" firstAttribute="centerX" secondItem="7Cd-af-wgk" secondAttribute="centerX" id="eWl-ur-J65"/>
+                            <constraint firstItem="RFz-vh-eK5" firstAttribute="top" secondItem="xeq-El-p4S" secondAttribute="bottom" constant="70" id="ooe-Ib-8c5"/>
+                            <constraint firstItem="xeq-El-p4S" firstAttribute="centerX" secondItem="7Cd-af-wgk" secondAttribute="centerX" id="tfT-u1-Mlu"/>
+                            <constraint firstItem="RFz-vh-eK5" firstAttribute="centerX" secondItem="7Cd-af-wgk" secondAttribute="centerX" id="u36-YI-yHX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="56U-fT-1Vc" id="7Jl-Im-wFo"/>
+                        <outlet property="passwordField" destination="xeq-El-p4S" id="JAN-b0-EeW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gka-FX-u9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1388" y="47"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="mqA-e5-W1u">
+            <objects>
+                <viewController id="F1v-T2-MI1" customClass="RegisterViewController" customModule="o_X" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cuN-WZ-oSs"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Hy-9z-daB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CHU-8E-Su0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ll7-cN-Wwv">
+                                <rect key="frame" x="201" y="205" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="hb5-KP-X4t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aoo-bs-wBv">
+                                <rect key="frame" x="201" y="285" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ZuT-Cl-urv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHv-oH-1ib">
+                                <rect key="frame" x="274" y="385" width="52" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="F1v-T2-MI1" eventType="touchUpInside" id="h0f-uT-w5x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8428936601" green="0.89870202539999999" blue="0.95695596930000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Aoo-bs-wBv" firstAttribute="top" secondItem="ll7-cN-Wwv" secondAttribute="bottom" constant="50" id="5SC-Pm-0QM"/>
+                            <constraint firstItem="ll7-cN-Wwv" firstAttribute="centerX" secondItem="CHU-8E-Su0" secondAttribute="centerX" id="A1x-Dg-yhs"/>
+                            <constraint firstItem="hHv-oH-1ib" firstAttribute="top" secondItem="Aoo-bs-wBv" secondAttribute="bottom" constant="70" id="IJK-MB-v7H"/>
+                            <constraint firstItem="Aoo-bs-wBv" firstAttribute="centerY" secondItem="CHU-8E-Su0" secondAttribute="centerY" id="Loh-YG-ALw"/>
+                            <constraint firstItem="Aoo-bs-wBv" firstAttribute="centerX" secondItem="CHU-8E-Su0" secondAttribute="centerX" id="QE9-vo-3LF"/>
+                            <constraint firstItem="hHv-oH-1ib" firstAttribute="centerX" secondItem="CHU-8E-Su0" secondAttribute="centerX" id="q5V-wl-B44"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="ll7-cN-Wwv" id="7td-Lu-pTE"/>
+                        <outlet property="passwordField" destination="Aoo-bs-wBv" id="U4t-Pj-PZG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Qg-mJ-sia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1388" y="735"/>
+        </scene>
+    </scenes>
 </document>

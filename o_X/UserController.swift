@@ -9,45 +9,69 @@
 import Foundation
 
 class UserController {
-    static var sharedInstance: UserController
+    static var sharedInstance = UserController()        //singleton instance
     var currentUser: User?
-    
-    
-    
+    var userArray: [User] = []
     
     
     func register(email email: String, password: String, onCompletion: (User?, String?) -> Void){
-        if registerationWorks {
-            register.onCompletion(onCompletion: newUserObject, nil)
-            log the registered user upon success - look @ current user
-        }
+//        //5A
+//        let emailString = ""
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        defaults.setObject(emailString, forKey: "currentUserEmail")
+//        defaults.synchronize()
+//        //
+        
         if (password.characters.count <= 6) {
             onCompletion(nil, "registration problem: password too short")
+            return
         }
-        if (registeredEmailAlreadyInUS = true) {    //to verify that email addresses havent been used before. check registered email addresses in the array of registered users
-            return ("email already in use")
+        
+        for user in userArray {
+            if user.email == email {
+                onCompletion(nil, "registration problem: email address already in use.")
+                return
+            }
         }
+    
+        let newUser = User()
+        newUser.email = email
+        newUser.password = password
+            
+        userArray.append(newUser)
+        self.currentUser = newUser
+        onCompletion(newUser, nil)
     }
     
     
-    
-    
-    func login(email email: String, passwod: String, onCompletion: (User?, String?) -> Void) {
-        if registeredUser = found {
-            call completion routine (passing the matching User object and no error message)
+    func login(email email: String, password: String, onCompletion: (User?, String?) -> Void) {
+        //5A
+//        let passwordString = ""
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        defaults.setObject(passwordString, forKey: "currentUserPassword")
+//        defaults.synchronize()
+//
+        
+        for user in userArray {
+            if (user.email == email && user.password == password) {
+                self.currentUser = user
+                onCompletion(user, nil)
+                return
+            }
         }
-        if didNotFindUser {
-            onCompletion(nil, "username or password incorrect")
-        }
-    
+        onCompletion(nil, "username or password incorrect")
+        return
     }
 
     
-    
     func logout(onCompletion onCompletion: (String?) -> Void) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.removeObjectForKey("currentUserEmail")
+        defaults.removeObjectForKey("currentUserPassword")
+        defaults.synchronize()
         
-        unset (back to nil) the public optional User property (used to get access to currently logged user)
-        
+        self.currentUser = nil
+        onCompletion(nil)
         
     }
 }

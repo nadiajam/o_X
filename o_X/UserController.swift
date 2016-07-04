@@ -15,12 +15,10 @@ class UserController {
     
     
     func register(email email: String, password: String, onCompletion: (User?, String?) -> Void){
-//        //5A
-//        let emailString = ""
-//        let defaults = NSUserDefaults.standardUserDefaults()
-//        defaults.setObject(emailString, forKey: "currentUserEmail")
-//        defaults.synchronize()
-//        //
+
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(email, forKey: "currentUserEmail")
+        defaults.synchronize()
         
         if (password.characters.count <= 6) {
             onCompletion(nil, "registration problem: password too short")
@@ -45,12 +43,10 @@ class UserController {
     
     
     func login(email email: String, password: String, onCompletion: (User?, String?) -> Void) {
-        //5A
-//        let passwordString = ""
-//        let defaults = NSUserDefaults.standardUserDefaults()
-//        defaults.setObject(passwordString, forKey: "currentUserPassword")
-//        defaults.synchronize()
-//
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(password, forKey: "currentUserPassword")
+        defaults.synchronize()
         
         for user in userArray {
             if (user.email == email && user.password == password) {

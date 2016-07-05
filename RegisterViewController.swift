@@ -14,10 +14,9 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBAction func registerButtonPressed(sender: AnyObject) {
         
-        UserController.sharedInstance.register(email: emailField.text!, password: passwordField.text!, onCompletion:  { user, message in
+        UserController.sharedInstance.register(email: emailField.text!, password: passwordField.text!, onCompletion:{user, message in
             
             if user == nil {
-                
                 let alert = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
                 let alertAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler:  { (action) in
                 })
@@ -25,7 +24,6 @@ class RegisterViewController: UIViewController {
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             else {
-                //instantiate game board and replace as root view
                 let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                 let window = UIApplication.sharedApplication().keyWindow
                 window?.rootViewController = viewController
@@ -33,11 +31,8 @@ class RegisterViewController: UIViewController {
         })
     }
 
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 

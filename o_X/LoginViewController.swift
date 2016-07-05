@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
         UserController.sharedInstance.login(email: emailField.text!, password: passwordField.text!, onCompletion:  { user, message in
             
             if user == nil {
-                
                 let alert = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
                 let alertAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler:  { (action) in
                 })
@@ -38,7 +37,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 

@@ -20,13 +20,24 @@ class UserController {
         defaults.setObject(email, forKey: "currentUserEmail")
         defaults.synchronize()
         
+        if (password == "" || email == "") {
+            onCompletion(nil, "all fields must be filled")
+            return
+        }
+        
         if (password.characters.count <= 6) {
             onCompletion(nil, "registration problem: password too short")
             return
         }
         
+        let charset = NSCharacterSet(charactersInString: "@")
+        if email.lowercaseString.rangeOfCharacterFromSet(charset) == nil {
+            onCompletion(nil, "invalid email")
+            return
+        }
+        
         for user in userArray {
-            if user.email == email {
+        if user.email == email {
                 onCompletion(nil, "registration problem: email address already in use.")
                 return
             }

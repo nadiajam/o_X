@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.rootViewController = viewController
             })
         }
-        
         return true
     }
 

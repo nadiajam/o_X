@@ -33,5 +33,23 @@ class OXGameController {
     func gameState() {
         currentGame.currentGameStatus()
     }
+    
+    func getGames(onCompletion onCompletion: ([OXGame]?, String?) -> Void) {
+        
+        let a = OXGame()
+        let b = OXGame()
+        let c = OXGame()
+        
+        a.ID = 5
+        a.host = "tobin"
+        
+        b.ID = 12
+        b.host = "elvis"
+        
+        c.ID = 544
+        b.host = "max"
+        
+        onCompletion([a,b,c], nil)
+    }
 
 }

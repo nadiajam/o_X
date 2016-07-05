@@ -13,23 +13,23 @@ class BoardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        newGameButton.hidden = true         //hides new button upon load
+        self.restartGame()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     //logout of current game
     @IBAction func Logout(sender: AnyObject) {
-        let viewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()
-        let window = UIApplication.sharedApplication().keyWindow
-        window?.rootViewController = viewController
-        print ("logout selected")
+        UserController.sharedInstance.logout(onCompletion: { message in
+            let viewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()
+            let window = UIApplication.sharedApplication().keyWindow
+            window?.rootViewController = viewController
+        })
     }
     
     
     //button pressed on board
     @IBAction func buttons(sender: UIButton) {
-        OXGameController.sharedInstance.getCurrentGame().buttonCount += 1       //increase button count by 1
         OXGameController.sharedInstance.playMove(sender.tag)
         OXGameController.sharedInstance.gameState()
         sender.setTitle(OXGameController.sharedInstance.getCurrentGame().whoseTurn().rawValue, forState: .Normal) 
@@ -84,11 +84,9 @@ class BoardViewController: UIViewController {
     
     func restartGame() {
         OXGameController.sharedInstance.restartGame1()
-        for apple in container.subviews {
-            if let banana = apple as? UIButton {
-                banana.setTitle("", forState: .Normal)
-                banana.enabled = true
-            }
+        for case let apple as UIButton in container.subviews {
+            apple.setTitle("", forState: .Normal)
+            apple.enabled = true
         }
         newGameButton.hidden = true
     }

@@ -10,8 +10,6 @@ import Foundation
 
 class OXGameController {
     static let sharedInstance = OXGameController()
-
-
     private var currentGame: OXGame = OXGame()
     
     func getCurrentGame() -> OXGame {

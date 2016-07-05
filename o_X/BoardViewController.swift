@@ -14,11 +14,8 @@ class BoardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.restartGame()
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
-    //logout of current game
     @IBAction func Logout(sender: AnyObject) {
         UserController.sharedInstance.logout(onCompletion: { message in
             let viewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()
@@ -27,8 +24,6 @@ class BoardViewController: UIViewController {
         })
     }
     
-    
-    //button pressed on board
     @IBAction func buttons(sender: UIButton) {
         OXGameController.sharedInstance.playMove(sender.tag)
         OXGameController.sharedInstance.gameState()
@@ -54,9 +49,7 @@ class BoardViewController: UIViewController {
                 self.newGameButton.hidden = false
             })
             alert.addAction(alertAction)
-            
             self.presentViewController(alert, animated: true, completion: nil)
-            
         }
         
         if ( OXGameController.sharedInstance.getCurrentGame().currentGameStatus() == OXGameState.Tie ) {
@@ -69,10 +62,8 @@ class BoardViewController: UIViewController {
                 self.newGameButton.hidden = false
             })
             alert.addAction(alertAction)
-            
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        
     }
     
     

@@ -79,6 +79,5 @@ class UserController {
         
         self.currentUser = nil
         onCompletion(nil)
-        
     }
 }

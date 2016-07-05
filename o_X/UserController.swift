@@ -16,6 +16,18 @@ class UserController {
     
     func register(email email: String, password: String, onCompletion: (User?, String?) -> Void){
 
+        //request has 4 things
+        //1. endpoint
+        //2. method
+        //3. input data (optional)
+        //4. response
+//        let request = self.createMutableAnonRequest(NSURL(string: "https://ox-backend.herokuapp.com/auth"),
+//            method: "POST", parameters: user)
+//        self.executeRequest(request, requestCompletionFunction: {(responseCode, json) in
+//            print(json)
+//        })
+        //
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(email, forKey: "currentUserEmail")
         defaults.synchronize()

@@ -38,7 +38,12 @@ class NetworkGamesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("you clicked a game. go you")
+        self.performSegueWithIdentifier("networkSegue", sender: self)
         return
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let nextView = segue.destinationViewController as? BoardViewController {
+            nextView.networkMode = true
+        }
     }
 }

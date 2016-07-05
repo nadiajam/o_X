@@ -85,47 +85,58 @@ class OXGame {
         }
         return currentGameState
     }
+
+    private func deserialiseBoard(boardString:String) -> [CellType]{
+        var newBoard:[CellType] = []
+        
+        for character in boardString.characters {
+            if character == "o" {
+                newBoard.append(CellType.O)
+            }
+            if character == "x" {
+                newBoard.append(CellType.X)
+            }
+            if character == "_" {
+                newBoard.append(CellType.Empty)
+            }
+        }
+        return newBoard
+    }
     
-    //class stuff
-//    private func deserialiseBoard(boardString: String) -> [CellType] {
-//        var board:String = ["_________"]
-//        for item in (0...9) {
-//            if ( boardString.characters[item] ) == "x" {
-//                board[item] = CellType.X
-//            }
-//        }
-//        for item in (0...9) {
-//            if ( boardString.characters[item] ) == "o" {
-//                board[item] = CellType.O
-//            }
-//        }
-//        for item in (0...9) {
-//            if ( boardString.characters[item] ) == "_" {
-//                board[item] = CellType.Empty
-//            }
-//        }
-//    }
-//    private func serialiseBoard() -> String {
-//        
-//    }
-//    
-//    init()  {
-//        init()
-//        //we are simulating setting our board from the internet
-//        let simulatedBoardStringFromNetwork = "o________" //update this string to different values to test your model serialisation
-//        self.board = deserialiseBoard(simulatedBoardStringFromNetwork) //your OXGame board model should get set here
-//        if(simulatedBoardStringFromNetwork == serialiseBoard())    {
-//            print("start\n------------------------------------")
-//            print("congratulations, you successfully deserialised your board and serialized it again correctly. You can send your data model over the internet with this code. 1 step closer to network OX ;)")
-//            
-//            print("done\n------------------------------------")
-//        }   else    {
-//            print("start\n------------------------------------")
-//            print ("your board deserialisation and serialization was not correct :( carry on coding on those functions")
-//            
-//            print("done\n------------------------------------")
-//        }
-//        
-//    }
+    private func serialiseBoard() -> String {
+        var newString:String = ""
+        
+        for item in board {
+            if item == CellType.O {
+                newString.appendContentsOf("o")
+            }
+            if item == CellType.X {
+                newString.appendContentsOf("x")
+            }
+            if item == CellType.Empty {
+                newString.appendContentsOf("_")
+            }
+        }
+        return newString
+    }
+    
+    init()  {
+        //we are simulating setting our board from the internet
+        let simulatedBoardStringFromNetwork = "o_____xx__" //update this string to different values to test your model serialisation
+        self.board = deserialiseBoard(simulatedBoardStringFromNetwork) //your OXGame board model should get set here
+        if(simulatedBoardStringFromNetwork == serialiseBoard())    {
+            print("start\n------------------------------------")
+            print("congratulations, you successfully deserialised your board and serialized it again correctly. You can send your data model over the internet with this code. 1 step closer to network OX ;)")
+            
+            print("done\n------------------------------------")
+        }   else    {
+            print("start\n------------------------------------")
+            print ("your board deserialisation and serialization was not correct :( carry on coding on those functions")
+            
+            print("done\n------------------------------------")
+        }
+    
+    }
+    
     
 }

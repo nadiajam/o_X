@@ -33,6 +33,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hnc-aX-qep">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPz-0h-Yr6">
                                 <rect key="frame" x="225" y="120" width="150" height="50"/>
                                 <constraints>
@@ -64,13 +67,16 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.80701901762814787" green="0.94563567638397217" blue="0.71384530688547831" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fPz-0h-Yr6" firstAttribute="centerX" secondItem="3ED-2i-GlD" secondAttribute="centerX" id="N2t-NT-8Dp"/>
+                            <constraint firstItem="hnc-aX-qep" firstAttribute="top" secondItem="3ED-2i-GlD" secondAttribute="top" id="Oeq-4s-BNq"/>
+                            <constraint firstItem="hnc-aX-qep" firstAttribute="leading" secondItem="3ED-2i-GlD" secondAttribute="leading" id="SME-ZZ-NzM"/>
+                            <constraint firstAttribute="bottom" secondItem="hnc-aX-qep" secondAttribute="bottom" id="ask-qw-IB3"/>
                             <constraint firstItem="fPz-0h-Yr6" firstAttribute="top" secondItem="3ED-2i-GlD" secondAttribute="top" constant="120" id="d9s-Qc-zBi"/>
                             <constraint firstItem="DIC-31-lht" firstAttribute="centerX" secondItem="3ED-2i-GlD" secondAttribute="centerX" id="fsX-Kd-v3Y"/>
                             <constraint firstItem="Kpl-8e-150" firstAttribute="centerY" secondItem="3ED-2i-GlD" secondAttribute="centerY" id="m20-Ab-3t0"/>
                             <constraint firstItem="DIC-31-lht" firstAttribute="top" secondItem="Kpl-8e-150" secondAttribute="bottom" constant="20" id="mQ7-xh-tu3"/>
+                            <constraint firstAttribute="trailing" secondItem="hnc-aX-qep" secondAttribute="trailing" id="mZ4-f5-0lu"/>
                             <constraint firstItem="Kpl-8e-150" firstAttribute="centerX" secondItem="3ED-2i-GlD" secondAttribute="centerX" id="rEw-OV-0CK"/>
                         </constraints>
                     </view>
@@ -92,6 +98,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UnJ-p7-mpW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="56U-fT-1Vc">
                                 <rect key="frame" x="200" y="205" width="200" height="30"/>
                                 <constraints>
@@ -119,14 +128,17 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.80701901760000005" green="0.94563567640000001" blue="0.71384530690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="UnJ-p7-mpW" firstAttribute="leading" secondItem="7Cd-af-wgk" secondAttribute="leading" id="9of-hL-x3a"/>
                             <constraint firstItem="xeq-El-p4S" firstAttribute="top" secondItem="56U-fT-1Vc" secondAttribute="bottom" constant="50" id="FTd-Cz-hSW"/>
+                            <constraint firstAttribute="trailing" secondItem="UnJ-p7-mpW" secondAttribute="trailing" id="MQZ-6p-o4w"/>
+                            <constraint firstItem="UnJ-p7-mpW" firstAttribute="top" secondItem="7Cd-af-wgk" secondAttribute="top" id="UC7-hQ-zgN"/>
                             <constraint firstItem="xeq-El-p4S" firstAttribute="centerY" secondItem="7Cd-af-wgk" secondAttribute="centerY" id="VKF-Ce-x7m"/>
                             <constraint firstItem="56U-fT-1Vc" firstAttribute="centerX" secondItem="7Cd-af-wgk" secondAttribute="centerX" id="eWl-ur-J65"/>
                             <constraint firstItem="RFz-vh-eK5" firstAttribute="top" secondItem="xeq-El-p4S" secondAttribute="bottom" constant="70" id="ooe-Ib-8c5"/>
                             <constraint firstItem="xeq-El-p4S" firstAttribute="centerX" secondItem="7Cd-af-wgk" secondAttribute="centerX" id="tfT-u1-Mlu"/>
                             <constraint firstItem="RFz-vh-eK5" firstAttribute="centerX" secondItem="7Cd-af-wgk" secondAttribute="centerX" id="u36-YI-yHX"/>
+                            <constraint firstAttribute="bottom" secondItem="UnJ-p7-mpW" secondAttribute="bottom" id="zEe-eS-5oZ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -150,6 +162,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4ui-Lq-fgX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ll7-cN-Wwv">
                                 <rect key="frame" x="200" y="205" width="200" height="30"/>
                                 <constraints>
@@ -177,14 +192,17 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.80701901760000005" green="0.94563567640000001" blue="0.71384530690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="4ui-Lq-fgX" firstAttribute="leading" secondItem="CHU-8E-Su0" secondAttribute="leading" id="0bZ-zn-2We"/>
                             <constraint firstItem="Aoo-bs-wBv" firstAttribute="top" secondItem="ll7-cN-Wwv" secondAttribute="bottom" constant="50" id="5SC-Pm-0QM"/>
                             <constraint firstItem="ll7-cN-Wwv" firstAttribute="centerX" secondItem="CHU-8E-Su0" secondAttribute="centerX" id="A1x-Dg-yhs"/>
                             <constraint firstItem="hHv-oH-1ib" firstAttribute="top" secondItem="Aoo-bs-wBv" secondAttribute="bottom" constant="70" id="IJK-MB-v7H"/>
                             <constraint firstItem="Aoo-bs-wBv" firstAttribute="centerY" secondItem="CHU-8E-Su0" secondAttribute="centerY" id="Loh-YG-ALw"/>
                             <constraint firstItem="Aoo-bs-wBv" firstAttribute="centerX" secondItem="CHU-8E-Su0" secondAttribute="centerX" id="QE9-vo-3LF"/>
+                            <constraint firstAttribute="bottom" secondItem="4ui-Lq-fgX" secondAttribute="bottom" id="Rf5-MY-qhP"/>
+                            <constraint firstItem="4ui-Lq-fgX" firstAttribute="top" secondItem="CHU-8E-Su0" secondAttribute="top" id="Ukg-EO-urx"/>
                             <constraint firstItem="hHv-oH-1ib" firstAttribute="centerX" secondItem="CHU-8E-Su0" secondAttribute="centerX" id="q5V-wl-B44"/>
+                            <constraint firstAttribute="trailing" secondItem="4ui-Lq-fgX" secondAttribute="trailing" id="x6w-VG-FQG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -197,4 +215,7 @@
             <point key="canvasLocation" x="1388" y="735"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg" width="1080" height="1920"/>
+    </resources>
 </document>

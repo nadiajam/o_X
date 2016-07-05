@@ -11,4 +11,6 @@ import Foundation
 class User {
     var email: String = ""
     var password: String = ""
+    var token: String = ""
+    var client: String = ""
 }

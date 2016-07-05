@@ -17,6 +17,12 @@
 		679CB8171D25E1EB00776407 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679CB8161D25E1EB00776407 /* UserController.swift */; };
 		679CB8191D25EF2900776407 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 679CB8181D25EF2900776407 /* Onboarding.storyboard */; };
 		67ACF1FB1D26870C00485CFA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ACF1FA1D26870C00485CFA /* LoginViewController.swift */; };
+		67B0BB171D2BDA6600228389 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0BB161D2BDA6600228389 /* WebService.swift */; };
+		67B0BB231D2C015200228389 /* IMG_2956.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 67B0BB211D2C015200228389 /* IMG_2956.jpg */; };
+		67B0BB281D2C03C100228389 /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 67B0BB241D2C03C100228389 /* images.jpg */; };
+		67B0BB291D2C03C100228389 /* 8a486022019163adcb30d7601a7d08d4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 67B0BB251D2C03C100228389 /* 8a486022019163adcb30d7601a7d08d4.jpg */; };
+		67B0BB2A1D2C03C100228389 /* 0dcc43a369354192e962332da6b0b3e3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 67B0BB261D2C03C100228389 /* 0dcc43a369354192e962332da6b0b3e3.jpg */; };
+		67B0BB2B1D2C03C100228389 /* Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 67B0BB271D2C03C100228389 /* Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg */; };
 		67B5986A1D23DB31002062A9 /* OXGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B598691D23DB31002062A9 /* OXGame.swift */; };
 		67B5986E1D241E59002062A9 /* OXGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B5986D1D241E59002062A9 /* OXGameController.swift */; };
 		67CB4FD31D2A958100E4DE28 /* NetworkGamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CB4FD21D2A958000E4DE28 /* NetworkGamesTableViewController.swift */; };
@@ -37,6 +43,12 @@
 		679CB8161D25E1EB00776407 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		679CB8181D25EF2900776407 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		67ACF1FA1D26870C00485CFA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		67B0BB161D2BDA6600228389 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		67B0BB211D2C015200228389 /* IMG_2956.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2956.jpg; sourceTree = "<group>"; };
+		67B0BB241D2C03C100228389 /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
+		67B0BB251D2C03C100228389 /* 8a486022019163adcb30d7601a7d08d4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8a486022019163adcb30d7601a7d08d4.jpg; sourceTree = "<group>"; };
+		67B0BB261D2C03C100228389 /* 0dcc43a369354192e962332da6b0b3e3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0dcc43a369354192e962332da6b0b3e3.jpg; sourceTree = "<group>"; };
+		67B0BB271D2C03C100228389 /* Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg"; sourceTree = "<group>"; };
 		67B598691D23DB31002062A9 /* OXGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OXGame.swift; sourceTree = "<group>"; };
 		67B5986D1D241E59002062A9 /* OXGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OXGameController.swift; sourceTree = "<group>"; };
 		67CB4FD21D2A958000E4DE28 /* NetworkGamesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkGamesTableViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +95,7 @@
 				679CB8141D25E1DF00776407 /* User.swift */,
 				679CB8161D25E1EB00776407 /* UserController.swift */,
 				02F782C91D22966600E3BC29 /* Main.storyboard */,
+				67B0BB211D2C015200228389 /* IMG_2956.jpg */,
 				67CB4FD21D2A958000E4DE28 /* NetworkGamesTableViewController.swift */,
 				02F782CC1D22966600E3BC29 /* Assets.xcassets */,
 				02F782CE1D22966600E3BC29 /* LaunchScreen.storyboard */,
@@ -90,6 +103,10 @@
 				678544141D26B211005DEA86 /* RegisterViewController.swift */,
 				67ACF1FA1D26870C00485CFA /* LoginViewController.swift */,
 				02F782D11D22966600E3BC29 /* Info.plist */,
+				67B0BB241D2C03C100228389 /* images.jpg */,
+				67B0BB251D2C03C100228389 /* 8a486022019163adcb30d7601a7d08d4.jpg */,
+				67B0BB261D2C03C100228389 /* 0dcc43a369354192e962332da6b0b3e3.jpg */,
+				67B0BB271D2C03C100228389 /* Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg */,
 			);
 			path = o_X;
 			sourceTree = "<group>";
@@ -99,6 +116,7 @@
 			children = (
 				67B598691D23DB31002062A9 /* OXGame.swift */,
 				67B5986D1D241E59002062A9 /* OXGameController.swift */,
+				67B0BB161D2BDA6600228389 /* WebService.swift */,
 			);
 			name = Model;
 			path = o_X;
@@ -184,8 +202,13 @@
 			files = (
 				02F782D01D22966600E3BC29 /* LaunchScreen.storyboard in Resources */,
 				02F782CD1D22966600E3BC29 /* Assets.xcassets in Resources */,
+				67B0BB2B1D2C03C100228389 /* Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg in Resources */,
+				67B0BB231D2C015200228389 /* IMG_2956.jpg in Resources */,
+				67B0BB291D2C03C100228389 /* 8a486022019163adcb30d7601a7d08d4.jpg in Resources */,
 				02F782CB1D22966600E3BC29 /* Main.storyboard in Resources */,
 				679CB8191D25EF2900776407 /* Onboarding.storyboard in Resources */,
+				67B0BB281D2C03C100228389 /* images.jpg in Resources */,
+				67B0BB2A1D2C03C100228389 /* 0dcc43a369354192e962332da6b0b3e3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +275,7 @@
 				67CB4FD31D2A958100E4DE28 /* NetworkGamesTableViewController.swift in Sources */,
 				67B5986E1D241E59002062A9 /* OXGameController.swift in Sources */,
 				679CB8151D25E1DF00776407 /* User.swift in Sources */,
+				67B0BB171D2BDA6600228389 /* WebService.swift in Sources */,
 				02F782C61D22966600E3BC29 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

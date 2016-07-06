@@ -7,7 +7,6 @@ import UIKit
 
 class BoardViewController: UIViewController {
 
-
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var newGameButton: UIButton!
     var networkMode: Bool = false
@@ -17,7 +16,10 @@ class BoardViewController: UIViewController {
         super.viewDidLoad()
         newGameButton?.hidden = true
         self.restartGame()
-        self.updateUI()
+        
+        if networkMode {
+            self.updateUI()
+        }
     }
         
     @IBAction func Logout(sender: AnyObject) {

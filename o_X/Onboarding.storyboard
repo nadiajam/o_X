@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hnc-aX-qep">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewCat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hnc-aX-qep">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPz-0h-Yr6">
@@ -47,8 +47,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpl-8e-150" userLabel="Login">
-                                <rect key="frame" x="284" y="286" width="33" height="29"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <rect key="frame" x="275" y="285" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="SUJ-3A-9ue"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -57,8 +60,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIC-31-lht" userLabel="Register">
-                                <rect key="frame" x="274" y="335" width="52" height="29"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <rect key="frame" x="265" y="335" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="7vb-wP-xOU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -98,7 +104,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UnJ-p7-mpW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewCat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UnJ-p7-mpW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="56U-fT-1Vc">
@@ -118,8 +124,11 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFz-vh-eK5">
-                                <rect key="frame" x="284" y="385" width="33" height="29"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <rect key="frame" x="275" y="378" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="XdQ-gy-RxA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -135,7 +144,7 @@
                             <constraint firstItem="UnJ-p7-mpW" firstAttribute="top" secondItem="7Cd-af-wgk" secondAttribute="top" id="UC7-hQ-zgN"/>
                             <constraint firstItem="xeq-El-p4S" firstAttribute="centerY" secondItem="7Cd-af-wgk" secondAttribute="centerY" id="VKF-Ce-x7m"/>
                             <constraint firstItem="56U-fT-1Vc" firstAttribute="centerX" secondItem="7Cd-af-wgk" secondAttribute="centerX" id="eWl-ur-J65"/>
-                            <constraint firstItem="RFz-vh-eK5" firstAttribute="top" secondItem="xeq-El-p4S" secondAttribute="bottom" constant="70" id="ooe-Ib-8c5"/>
+                            <constraint firstItem="RFz-vh-eK5" firstAttribute="top" secondItem="xeq-El-p4S" secondAttribute="bottom" constant="63" id="ooe-Ib-8c5"/>
                             <constraint firstItem="xeq-El-p4S" firstAttribute="centerX" secondItem="7Cd-af-wgk" secondAttribute="centerX" id="tfT-u1-Mlu"/>
                             <constraint firstItem="RFz-vh-eK5" firstAttribute="centerX" secondItem="7Cd-af-wgk" secondAttribute="centerX" id="u36-YI-yHX"/>
                             <constraint firstAttribute="bottom" secondItem="UnJ-p7-mpW" secondAttribute="bottom" id="zEe-eS-5oZ"/>
@@ -162,7 +171,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4ui-Lq-fgX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewCat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4ui-Lq-fgX">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ll7-cN-Wwv">
@@ -182,8 +191,11 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHv-oH-1ib">
-                                <rect key="frame" x="274" y="385" width="52" height="29"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <rect key="frame" x="265" y="378" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Cv3-t5-K4A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -196,7 +208,7 @@
                             <constraint firstItem="4ui-Lq-fgX" firstAttribute="leading" secondItem="CHU-8E-Su0" secondAttribute="leading" id="0bZ-zn-2We"/>
                             <constraint firstItem="Aoo-bs-wBv" firstAttribute="top" secondItem="ll7-cN-Wwv" secondAttribute="bottom" constant="50" id="5SC-Pm-0QM"/>
                             <constraint firstItem="ll7-cN-Wwv" firstAttribute="centerX" secondItem="CHU-8E-Su0" secondAttribute="centerX" id="A1x-Dg-yhs"/>
-                            <constraint firstItem="hHv-oH-1ib" firstAttribute="top" secondItem="Aoo-bs-wBv" secondAttribute="bottom" constant="70" id="IJK-MB-v7H"/>
+                            <constraint firstItem="hHv-oH-1ib" firstAttribute="top" secondItem="Aoo-bs-wBv" secondAttribute="bottom" constant="63" id="IJK-MB-v7H"/>
                             <constraint firstItem="Aoo-bs-wBv" firstAttribute="centerY" secondItem="CHU-8E-Su0" secondAttribute="centerY" id="Loh-YG-ALw"/>
                             <constraint firstItem="Aoo-bs-wBv" firstAttribute="centerX" secondItem="CHU-8E-Su0" secondAttribute="centerX" id="QE9-vo-3LF"/>
                             <constraint firstAttribute="bottom" secondItem="4ui-Lq-fgX" secondAttribute="bottom" id="Rf5-MY-qhP"/>
@@ -216,6 +228,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cool Cat Glasses iPhone 6 Plus HD Wallpaper.jpg" width="1080" height="1920"/>
+        <image name="NewCat.jpg" width="1080" height="1920"/>
     </resources>
 </document>

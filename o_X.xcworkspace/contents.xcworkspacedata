@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:NewCat.jpg">
+   </FileRef>
+   <FileRef
       location = "group:o_X.xcodeproj">
    </FileRef>
    <FileRef

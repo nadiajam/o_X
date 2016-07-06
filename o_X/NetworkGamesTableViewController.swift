@@ -41,6 +41,7 @@ class NetworkGamesTableViewController: UITableViewController {
         self.performSegueWithIdentifier("networkSegue", sender: self)
         return
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let nextView = segue.destinationViewController as? BoardViewController {
             nextView.networkMode = true

@@ -12,14 +12,14 @@ class BoardViewController: UIViewController {
     var networkMode: Bool = false
 
     override func viewDidLoad() {
-        print (OXGameController.sharedInstance.getCurrentGame().board)
-        super.viewDidLoad()
+//        print (OXGameController.sharedInstance.getCurrentGame().board)
+//        super.viewDidLoad()
         newGameButton?.hidden = true
-        self.restartGame()
         
-        if networkMode {
-            self.updateUI()
-        }
+//        if networkMode {
+//            self.updateUI()
+//        }
+        self.updateUI()
     }
         
     @IBAction func Logout(sender: AnyObject) {
@@ -30,16 +30,53 @@ class BoardViewController: UIViewController {
         })
     }
     
+    @IBAction func refreshGameButtonPressed(sender: AnyObject) {
+        OXGameController.sharedInstance.viewGame({ newGame, message in
+            if message == nil {
+                self.updateUI()
+            } else {
+                let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default)  { (action: UIAlertAction) in }
+                errorAlert.addAction(dismissErrorAlert)
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+            }
+        })
+    }
+    
+    @IBAction func deleteGameButtonPressed(sender: AnyObject) {
+        OXGameController.sharedInstance.cancelGame({ message in
+            if message == nil {
+                self.navigationController?.popViewControllerAnimated(true)
+            } else {
+                let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default)  { (action: UIAlertAction) in }
+                errorAlert.addAction(dismissErrorAlert)
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+            }
+        })
+    }
+    
     @IBAction func buttons(sender: UIButton) {
         OXGameController.sharedInstance.playMove(sender.tag)
         OXGameController.sharedInstance.gameState()
-        sender.setTitle(OXGameController.sharedInstance.getCurrentGame().whoseTurn().rawValue, forState: .Normal) 
+        sender.setTitle(OXGameController.sharedInstance.getCurrentGame().whoseTurn().rawValue, forState: .Normal)
         
         sender.enabled = false
         
+        if networkMode {
+            OXGameController.sharedInstance.networkPlayMove({ message in
+                if message != nil {
+                    let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                    let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default)  { (action: UIAlertAction) in }
+                    errorAlert.addAction(dismissErrorAlert)
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
+                }
+            })
+        }
+        
         if OXGameController.sharedInstance.getCurrentGame().gameWon() {
-            OXGameController.sharedInstance.getCurrentGame().currentGameState = OXGameState.Inprogress
-            print("\(OXGameController.sharedInstance.getCurrentGame().currentTurnType) wins, congrats!")
+//            OXGameController.sharedInstance.getCurrentGame().currentGameState = OXGameState.Inprogress
+            print("\(OXGameController.sharedInstance.getCurrentGame().whoseTurn()) wins, congrats!")
             newGameButton?.hidden = false
             
             for button in container.subviews {
@@ -49,7 +86,7 @@ class BoardViewController: UIViewController {
             }
             
             //UIAlert
-            let whoWon: String = "\(OXGameController.sharedInstance.getCurrentGame().currentTurnType) Won"
+            let whoWon: String = "\(OXGameController.sharedInstance.getCurrentGame().whoseTurn()) Won"
             let alert = UIAlertController(title: "Game Over", message: whoWon, preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler:  { (action) in
                 self.newGameButton?.hidden = false
@@ -58,8 +95,8 @@ class BoardViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
-        if ( OXGameController.sharedInstance.getCurrentGame().currentGameStatus() == OXGameState.Tie ) {
-            OXGameController.sharedInstance.getCurrentGame().currentGameState = OXGameState.Inprogress
+        if ( OXGameController.sharedInstance.getCurrentGame().currentGameState() == OXGameState.Tie ) {
+//            OXGameController.sharedInstance.getCurrentGame().currentGameState = OXGameState.Inprogress
             newGameButton?.hidden = false
             
             //UIAlert

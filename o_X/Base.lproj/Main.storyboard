@@ -310,7 +310,7 @@
                                             <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -328,7 +328,11 @@
                                 <action selector="dismissButtonPressed:" destination="H2t-dE-9Aw" id="Qfq-Fh-NVd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CNn-hE-fN2"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CNn-hE-fN2">
+                            <connections>
+                                <action selector="addGameButtonPressed:" destination="H2t-dE-9Aw" id="7Yf-bU-c1D"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="NhZ-nK-2jW" kind="show" identifier="networkSegue" id="QM5-T5-VdV"/>
@@ -582,6 +586,29 @@
                                 <color key="textColor" red="0.83863710732984287" green="0.76317184742023669" blue="0.59341945824547537" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sl-Z4-30X">
+                                <rect key="frame" x="30" y="84" width="70" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="97a-un-Owl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshGameButtonPressed:" destination="NhZ-nK-2jW" eventType="touchUpInside" id="lN0-oV-dEE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IZ-P8-rqF">
+                                <rect key="frame" x="30" y="135" width="42" height="31"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteGameButtonPressed:" destination="NhZ-nK-2jW" eventType="touchUpInside" id="siK-vP-JA5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fx8-kF-80P" secondAttribute="trailing" id="1al-Wx-iOM"/>
@@ -592,8 +619,12 @@
                             <constraint firstItem="fx8-kF-80P" firstAttribute="leading" secondItem="UAg-YY-uZo" secondAttribute="leading" id="APf-Eb-Aa0"/>
                             <constraint firstItem="JLS-Zu-xrs" firstAttribute="leading" secondItem="UAg-YY-uZo" secondAttribute="leading" id="Bxg-b7-7cD"/>
                             <constraint firstItem="pc2-hO-XE5" firstAttribute="top" secondItem="UAg-YY-uZo" secondAttribute="top" constant="70" id="G93-cn-mn4"/>
+                            <constraint firstItem="6IZ-P8-rqF" firstAttribute="top" secondItem="2Sl-Z4-30X" secondAttribute="bottom" constant="20" id="H14-sy-UEM"/>
                             <constraint firstAttribute="bottom" secondItem="JLS-Zu-xrs" secondAttribute="bottom" id="aBa-h9-FFc"/>
+                            <constraint firstItem="2Sl-Z4-30X" firstAttribute="top" secondItem="2rR-Q9-Aoc" secondAttribute="bottom" constant="20" id="co3-QC-Ul1"/>
                             <constraint firstItem="pc2-hO-XE5" firstAttribute="centerX" secondItem="UAg-YY-uZo" secondAttribute="centerX" id="cs4-rV-yqD"/>
+                            <constraint firstItem="2Sl-Z4-30X" firstAttribute="leading" secondItem="UAg-YY-uZo" secondAttribute="leading" constant="30" id="tLE-7M-t98"/>
+                            <constraint firstItem="6IZ-P8-rqF" firstAttribute="leading" secondItem="UAg-YY-uZo" secondAttribute="leading" constant="30" id="v14-QB-fU9"/>
                             <constraint firstAttribute="trailing" secondItem="JLS-Zu-xrs" secondAttribute="trailing" id="wEw-m5-XIr"/>
                         </constraints>
                     </view>

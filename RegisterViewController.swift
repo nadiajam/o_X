@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+//import Alamofire
 
 class RegisterViewController: UIViewController {
 
@@ -15,34 +15,33 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBAction func registerButtonPressed(sender: AnyObject) {
         
-        UserController.sharedInstance.register(email: emailField.text!, password: passwordField.text!, onCompletion:{user, message in
+        let onCompletion = {(user: User?, message: String?) in
+            print("inside register method")
             
             if user == nil {
-                let alert = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
-                let alertAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler:  { (action) in
-                })
-                alert.addAction(alertAction)
-                self.presentViewController(alert, animated: true, completion: nil)
-            }
-            else {
+                let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default)  { (action: UIAlertAction) in }
+                errorAlert.addAction(dismissErrorAlert)
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+            } else {
                 let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                 let window = UIApplication.sharedApplication().keyWindow
                 window?.rootViewController = viewController
             }
-        })
-        
-        Alamofire.request(.GET, "https://httpbin.org/get")          //this is a get method
-        Alamofire.request(.GET, "https://httpbin.org/get", parameters: ["foo": "bar"])
-            .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
         }
+        UserController.sharedInstance.register(emailField.text!, password: passwordField.text!, onCompletion: onCompletion)
+        
+//        Alamofire.request(.GET, "https://httpbin.org/get")          //this is a get method
+//        Alamofire.request(.GET, "https://httpbin.org/get", parameters: ["foo": "bar"])
+//            .responseJSON { response in
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)   // result of response serialization
+//                
+//                if let JSON = response.result.value {
+//                    print("JSON: \(JSON)")
+//                }
     }
 
     override func viewDidLoad() {

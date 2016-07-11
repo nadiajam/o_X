@@ -12,26 +12,26 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
     @IBAction func loginButtonPressed(sender: AnyObject) {
-        
-        UserController.sharedInstance.login(email: emailField.text!, password: passwordField.text!, onCompletion:  { user, message in
-            
+       
+        let onCompletion = {(user: User?, message: String?) in
             if user == nil {
-                let alert = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
-                let alertAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler:  { (action) in
-                })
-                alert.addAction(alertAction)
-                self.presentViewController(alert, animated: true, completion: nil)
+                let errorMessage: String = message!
+                let errorAlert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default)  { (action: UIAlertAction) in }
+                    errorAlert.addAction(dismissErrorAlert)
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+                return
             }
             else {
                 //instantiate game board and replace as root view
                 let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                 let window = UIApplication.sharedApplication().keyWindow
                 window?.rootViewController = viewController
+                return
             }
-        })
-
+        }
+        UserController.sharedInstance.login(emailField.text!, password: passwordField.text!, onCompletion: onCompletion)
     }
     
     override func viewDidLoad() {

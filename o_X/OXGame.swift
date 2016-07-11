@@ -25,9 +25,6 @@ enum OXGameState: String {
 class OXGame {
     
     //variables
-    var buttonCount: Int = 0
-    var currentTurnType: CellType = CellType.X
-    var currentGameState: OXGameState = OXGameState.Inprogress
     var ID: Int = 0
     var host: String = ""
     
@@ -36,26 +33,32 @@ class OXGame {
     
     //refers to var buttonCount
     func turnCount() -> Int {
-        return (self.buttonCount)
+        var buttonNumber: Int = 0
+        for button in board {
+            if button != CellType.Empty {
+                buttonNumber += 1
+            }
+        }
+        return buttonNumber
     }
     
     //returns whose turn it is
     func whoseTurn() -> CellType {
-        return currentTurnType 
+        if turnCount()%2 == 0 {
+            return CellType.O
+        } else {
+            return CellType.X
+        }
     }
     
     //registering moves as X or O in board array
-    func playMove(cellNumb: Int) -> CellType {
-        board[cellNumb] = currentTurnType
-        buttonCount += 1
-        
-        if currentTurnType == CellType.X {
-            currentTurnType = CellType.O
+    func playMove(cellNumb: Int) {
+        if whoseTurn() == CellType.X {
+            board[cellNumb] = CellType.O
         }
-        else if currentTurnType == CellType.O {
-            currentTurnType = CellType.X
+        else if whoseTurn() == CellType.O {
+            board[cellNumb] = CellType.X
         }
-        return board[cellNumb]
     }
     
     func gameWon() -> Bool {
@@ -71,22 +74,21 @@ class OXGame {
     
     func resetGame() {
         board = [CellType](count: 9, repeatedValue: .Empty)
-        currentTurnType = .X
-        buttonCount = 0
     }
     
     //returns the current game state...
-    func currentGameStatus() -> OXGameState {
+    func currentGameState() -> OXGameState {
         if gameWon() == true {
-            currentGameState = OXGameState.Won
+            return OXGameState.Won
         }
         else if self.turnCount() == 9 {
-            currentGameState = OXGameState.Tie
+            return OXGameState.Tie
         }
-        return currentGameState
+    //potentially add in network mode if statement for the other OXGameStates (open, closed)
+        else { return OXGameState.Inprogress }
     }
 
-    private func deserialiseBoard(boardString:String) -> [CellType]{
+    func deserialiseBoard(boardString:String) {
         var newBoard:[CellType] = []
         
         for character in boardString.characters {
@@ -100,10 +102,10 @@ class OXGame {
                 newBoard.append(CellType.Empty)
             }
         }
-        return newBoard
+        board = newBoard
     }
     
-    private func serialiseBoard() -> String {
+    func serialiseBoard() -> String {
         var newString:String = ""
         
         for item in board {
@@ -122,21 +124,19 @@ class OXGame {
     
     init()  {
         //we are simulating setting our board from the internet
-        let simulatedBoardStringFromNetwork = "o_____xx__" //update this string to different values to test your model serialisation
-        self.board = deserialiseBoard(simulatedBoardStringFromNetwork) //your OXGame board model should get set here
-        if(simulatedBoardStringFromNetwork == serialiseBoard())    {
-            print("start\n------------------------------------")
-            print("congratulations, you successfully deserialised your board and serialized it again correctly. You can send your data model over the internet with this code. 1 step closer to network OX ;)")
-            
-            print("done\n------------------------------------")
-        }   else    {
-            print("start\n------------------------------------")
-            print ("your board deserialisation and serialization was not correct :( carry on coding on those functions")
-            
-            print("done\n------------------------------------")
-        }
-    
+//        let simulatedBoardStringFromNetwork = "_________" //update this string to different values to test your model serialisation
+//        deserialiseBoard(simulatedBoardStringFromNetwork) //your OXGame board model should get set here
+//        if(simulatedBoardStringFromNetwork == serialiseBoard())    {
+//            print("start\n------------------------------------")
+//            print("congratulations, you successfully deserialised your board and serialized it again correctly. You can send your data model over the internet with this code. 1 step closer to network OX ;)")
+//            
+//            print("done\n------------------------------------")
+//        }   else    {
+//            print("start\n------------------------------------")
+//            print ("your board deserialisation and serialization was not correct :( carry on coding on those functions")
+//            
+//            print("done\n------------------------------------")
+//        }
     }
-    
     
 }

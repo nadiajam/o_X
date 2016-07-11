@@ -14,9 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let email = defaults.stringForKey("currentUserEmail"), password = defaults.stringForKey("currentUserPassword") {
-            UserController.sharedInstance.register(email: email, password: password, onCompletion: { (user, error) in
-                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                self.window?.rootViewController = viewController
+            UserController.sharedInstance.login(email, password: password, onCompletion: { (user, error) in
+                if user != nil {
+                    let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                    self.window?.rootViewController = viewController
+                }
             })
         }
         return true

@@ -14,6 +14,20 @@ class NetworkGamesTableViewController: UITableViewController {
     
     @IBAction func dismissButtonPressed(sender: AnyObject) {
         [self .dismissViewControllerAnimated(true, completion:nil)]
+        print("dismiss pressed")
+    }
+    
+    @IBAction func addGameButtonPressed(sender: AnyObject) {
+        OXGameController.sharedInstance.hostGame { (newGame, message) in
+            if message == nil {
+                self.performSegueWithIdentifier("networkSegue", sender: self)
+            } else {
+                let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default)  { (action: UIAlertAction) in }
+                errorAlert.addAction(dismissErrorAlert)
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -38,7 +52,16 @@ class NetworkGamesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("networkSegue", sender: self)
+        OXGameController.sharedInstance.joinGame(indexPath.row, gameArray: gamesArray, onCompletion: { newGame, message in
+            if message == nil {
+                self.performSegueWithIdentifier("networkSegue", sender: self)
+            } else {
+                let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default)  { (action: UIAlertAction) in }
+                errorAlert.addAction(dismissErrorAlert)
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+            }
+        })
         return
     }
     
